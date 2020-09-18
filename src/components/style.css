@@ -5,10 +5,7 @@ body {
     background-color: rgb(10, 168, 155);
 }
 
-.display-4 , .lead {
-    color: white;
-    text-align: center;
-}
+
 #searchBtn {
     background-color: rgb(10, 168, 155) ;
     margin: 10px;
