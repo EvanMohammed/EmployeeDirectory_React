@@ -21,7 +21,14 @@ function Employees() {
     })
   }, []);
   const handleInputChange = event => {
-    setEmployeeSearch(event.target.value);
+    let searchValue = event.target.value;
+    searchValue = searchValue.toLowerCase()
+    let searchResults = [...employeeSearch.users];
+    searchResults = searchResults.filter((user) => {
+      let fullName = `${user.name.first} ${user.name.last}`.toLowerCase()
+      return fullName.includes(searchValue)
+    })
+    setEmployeeSearch({...employeeSearch , filterUsers : searchResults})
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -49,20 +56,25 @@ function Employees() {
           
 
 
-            <ul>
-      {employeeSearch.users.map((user) =>
-        (<div className="card" >
-
-          <li key={user.id.value}>{user.dob.date}</li>
-          <li key={user.id.value}>{user.email}</li>
-          <li key={user.id.value }>{user.phone}</li>
-          <li key={user.id.value }> {user.picture.medium}</li>
+            <table>
+              <tbody>
+              {employeeSearch.filterUsers.map((user) =>
+        
+                  <tr>
+      <td key={user.id.value}>{user.name.first} {user.name.last}</td>
+          <td key={user.id.value}>{user.dob.date}</td>
+          <td key={user.id.value}>{user.email}</td>
+          <td key={user.id.value }>{user.phone}</td>
+          <td key={user.id.value }><img src={user.picture.medium}></img></td>
           
-
-
-        </div>)
-      )}
-    </ul>
+</tr>
+          
+          
+              )}
+          
+          
+          </tbody>
+    </table>
       </card>
     </div>
 
