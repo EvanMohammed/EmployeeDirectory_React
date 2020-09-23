@@ -11,7 +11,7 @@ function Employees() {
   useEffect(() => {
     API.getUsers().then((res) => {
       console.log(res.data.results[0])
-    
+
       setEmployeeSearch({
         ...employeeSearch,
         users: res.data.results,
@@ -28,7 +28,7 @@ function Employees() {
       let fullName = `${user.name.first} ${user.name.last}`.toLowerCase()
       return fullName.includes(searchValue)
     })
-    setEmployeeSearch({...employeeSearch , filterUsers : searchResults})
+    setEmployeeSearch({ ...employeeSearch, filterUsers: searchResults })
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -39,42 +39,53 @@ function Employees() {
 
 
   return (
-   
-            <div className="container">
-         <img src="https://jgparker.com/wp-content/uploads/2016/01/Employee-Benefits-5.jpg" class="img-fluid" alt="Responsive image" /> 
-      
-   
+
+    <div className="container">
+      <img src="https://jgparker.com/wp-content/uploads/2016/01/Employee-Benefits-5.jpg" class="img-fluid" alt="Responsive image" />
 
 
-         
-            <card heading="Search">
-              <SearchForm
-                
-                handleInputChange={handleInputChange}
-                handleFormSubmit={handleFormSubmit}
-              />
-          
 
 
-            <table>
-              <tbody>
+
+      <card heading="Search">
+        <SearchForm
+
+          handleInputChange={handleInputChange}
+          handleFormSubmit={handleFormSubmit}
+        />
+
+
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Img</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+            </tr>
+          </thead>
+
+
+
+          <tbody>
+            
               {employeeSearch.filterUsers.map((user) =>
-        
-                  <tr>
-      <td key={user.id.value}>{user.name.first} {user.name.last}</td>
-          <td key={user.id.value}>{user.dob.date}</td>
-          <td key={user.id.value}>{user.email}</td>
-          <td key={user.id.value }>{user.phone}</td>
-          <td key={user.id.value }><img src={user.picture.medium}></img></td>
-          
-</tr>
-          
-          
+
+                <tr>
+                  <th key={user.id.value} scope="row"><img src={user.picture.medium}></img></th>
+                  <td key={user.id.value}>{user.name.first} {user.name.last}</td>
+                  <td key={user.id.value}>{user.email}</td>
+                  <td key={user.id.value}>{user.phone}</td>
+
+
+                </tr>
+
+
               )}
+    </tbody>
+
           
-          
-          </tbody>
-    </table>
+          </table>
       </card>
     </div>
 
