@@ -67,9 +67,9 @@ function Employees() {
 
 
 
-          <tbody>
             
               {employeeSearch.filterUsers.map((user) =>
+          <tbody>
 
                 <tr>
                   <th key={user.id.value} scope="row"><img src={user.picture.medium}></img></th>
@@ -81,8 +81,8 @@ function Employees() {
                 </tr>
 
 
-              )}
     </tbody>
+              )}
 
           
           </table>
