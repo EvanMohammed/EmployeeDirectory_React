@@ -23,7 +23,7 @@ to test the app, after clicking the link search for a  certain name and you will
 
 ## Links
 - Github Account : https://github.com/evanmohammed
-- Email Address : evanmohammedsaleh
+- Email Address : evanmohammedsaleh@gmail.com
 - Deployed App : https://evanmohammed.github.io/EmployeeDirectory_React/
   
   
