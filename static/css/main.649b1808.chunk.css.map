@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACI,wBACJ,CAMA,sBAJI,wBAOJ,CAHA,WAEI,WACJ","file":"main.649b1808.chunk.css","sourcesContent":["body {\r\n    background-color: #f1f1f1;\r\n}\r\n#jumbotron {\r\n    background-color: rgb(10, 168, 155);\r\n}\r\n\r\n\r\n#searchBtn {\r\n    background-color: rgb(10, 168, 155) ;\r\n    margin: 10px;\r\n}"]}
